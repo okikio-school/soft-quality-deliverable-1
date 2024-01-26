@@ -1,4 +1,8 @@
-# Lab 1: Software Project Management and Comprehension Tool (Apache Maven)
+
+# soft-quality-deliverable-1
+Software Quality Project Deliverable 1
+
+## Lab 1: Software Project Management and Comprehension Tool (Apache Maven)
 ## repostory link
 https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
 ## Objective: 

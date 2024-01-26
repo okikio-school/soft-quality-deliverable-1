@@ -119,40 +119,6 @@ public class Binary {
 
 		// Construct and return the Binary object representing the sum.
 		return new Binary(resultBuilder.toString());
-
-		// // the index of the first digit of each number
-		// int ind1 = num1.number.length() - 1;
-		// int ind2 = num2.number.length() - 1;
-
-		// // initial variable
-		// int carry = 0;
-		// String num3 = ""; // the binary value of the sum
-		// while (ind1 >= 0 || ind2 >= 0 || carry != 0) // loop until all digits are
-		// processed
-		// {
-		// int sum = carry; // previous carry
-		// if (ind1 >= 0) { // if num1 has a digit to add
-		// sum += (num1.number.charAt(ind1) == '1') ? 1 : 0; // convert the digit to int
-		// and add it to sum
-		// ind1--; // update ind1
-		// }
-
-		// if (ind2 >= 0) { // if num2 has a digit to add
-		// sum += (num2.number.charAt(ind2) == '1') ? 1 : 0; // convert the digit to int
-		// and add it to sum
-		// ind2--; // update ind2
-		// }
-
-		// carry = sum / 2; // the new carry
-		// sum = sum % 2; // the resultant digit
-		// num3 = ((sum == 0) ? "0" : "1") + num3; // convert sum to string and append
-		// it to num3
-		// }
-
-		// Binary result = new Binary(num3); // create a binary object with the
-		// calculated value.
-		// return result;
-
 	}
 
 	/**

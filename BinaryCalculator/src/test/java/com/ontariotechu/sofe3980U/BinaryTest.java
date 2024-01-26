@@ -123,10 +123,10 @@ public class BinaryTest {
     }
     
     /**
-     * Test The and functions with two binary numbers, the length of the first
+     * Test The OR functions with two binary numbers, the length of the first
      * argument is greater than the second
      */
-    @DisplayName("Binary Multiply Test Cases 😎")
+    @DisplayName("Binary OR Test Cases 😎")
     @ParameterizedTest(name = "{0} | {1} = {2}")
     @CsvSource({
         // "first", "second", "expected"
@@ -148,10 +148,10 @@ public class BinaryTest {
 
     
     /**
-     * Test The and functions with two binary numbers, the length of the first
+     * Test The AND functions with two binary numbers, the length of the first
      * argument is greater than the second
      */
-    @DisplayName("Binary Multiply Test Cases 😎")
+    @DisplayName("Binary AND Test Cases 😎")
     @ParameterizedTest(name = "{0} & {1} = {2}")
     @CsvSource({
         // "first", "second", "expected"
@@ -172,7 +172,7 @@ public class BinaryTest {
     }
 
     /**
-     * Test The multiply functions with two binary numbers, the length of the first
+     * Test The MULTIPLY functions with two binary numbers, the length of the first
      * argument is greater than the second
      */
     @DisplayName("Binary Multiply Test Cases 😎")

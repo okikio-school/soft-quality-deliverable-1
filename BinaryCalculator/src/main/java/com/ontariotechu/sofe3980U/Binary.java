@@ -16,29 +16,6 @@ public class Binary {
 	 * @param number Binary string to be converted into a Binary object.
 	 */
 	public Binary(String number) {
-		// for (int i = 0; i < number.length(); i++) {
-		// // check each character if it's not 0 or 1
-		// char ch = number.charAt(i);
-		// if (ch != '0' && ch != '1') {
-		// number = "0"; // if not store "0" and end the function
-		// return;
-		// }
-		// }
-
-		// // remove any trailing zeros
-		// int beg;
-		// for (beg = 0; beg < number.length(); beg++) {
-		// if (number.charAt(beg) != '0')
-		// break;
-		// }
-
-		// // beg has the index of the first non zero digit in the number
-		// this.number = number.substring(beg); // exclude the trailing zeros if any
-
-		// // uncomment the following code
-		// if (this.number == "") { // replace empty strings with a single zero
-		// this.number = "0";
-		// }
 		this.number = sanitizeBinaryString(number);
 	}
 

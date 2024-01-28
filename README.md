@@ -2,10 +2,6 @@
 # soft-quality-deliverable-1
 Software Quality Project Deliverable 1
 
-## Lab 1: Software Project Management and Comprehension Tool (Apache Maven)
-
-GitHub Link: https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
-
 ## Objective: 
 1. Install Maven in Windows OS.
 2. Be familiar with Maven as a software project management tool.

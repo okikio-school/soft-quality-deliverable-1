@@ -3,8 +3,9 @@
 Software Quality Project Deliverable 1
 
 ## Lab 1: Software Project Management and Comprehension Tool (Apache Maven)
-## repostory link
-https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
+
+GitHub Link: https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
+
 ## Objective: 
 1. Install Maven in Windows OS.
 2. Be familiar with Maven as a software project management tool.
@@ -12,6 +13,7 @@ https://github.com/GeorgeDaoud3/SOFE3980U-Lab1.git
 4. Be able to automatically generate Documentation of the project.
 5. Be able to configure the project to automatically add dependencies to the jar file.
 6. Learn how to write and run tests a the project.
+
 ## What’s Maven?
 It’s A tool for building and managing any type of java-based project.
 It also can be used to build projects written in C#, Scala, Ruby, etc. 
@@ -24,6 +26,7 @@ development tasks in the project like:
 * Distribution
 * Releases
 * Mailing list
+
 ## Maven Installation
 * Have a JDK installed on your system. It should satisfy [the minimum requirement](https://maven.apache.org/download.cgi#system-requirements). 
 * Set the **JAVA_HOME** environment variable pointing to your JDK installation. 
@@ -32,7 +35,7 @@ development tasks in the project like:
     3.	On the **Advanced** tab, click **Environment Variables…** .
     4.	Click **New** to create a new environment variable for the current user.
     5.	Set the **Variable name** to **JAVA_HOME** and the **Variable value** to the installation path (it would be different than that shown in the figure). The **bin** folder containing **java.exe** should be accessed by the path.  
-    ![JAVA_HOME environment variable](images/envVar.jpg)  
+    ![JAVA_HOME environment variable](images/env-var.jpg)  
     6.	To check it, open a new command window and execute  
     ``` cmd
     echo %JAVA_HOME%
@@ -49,13 +52,13 @@ development tasks in the project like:
 mvn -v
 ```
 It should display an output similar to  
-![Maven version](images/mvnVer.jpg)
+![Maven version](images/mvn-ver.jpg)
 
 ``` cmd
 mvn clean test package site assembly:single
 ```  
 Now, you can access the result of the test cases from the summary report.  
-![third version of documentation](images/site3.jpg)  
+![third version of documentation](images/surefire.jpg)  
 
 # Design: 
 It's required from your team to

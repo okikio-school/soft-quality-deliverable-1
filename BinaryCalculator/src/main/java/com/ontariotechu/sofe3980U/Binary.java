@@ -57,15 +57,15 @@ public class Binary {
 		int carry = 0;
 
 		// The length of each binary number.
-		int binary1_len = binary1.number.length();
-		int binary2_len = binary2.number.length();
+		int length1 = binary1.number.length();
+		int length2 = binary2.number.length();
 
 		// Indices to track the current digit in each binary number, starting from the
 		// rightmost digit.
 		// The index should start from the index of the least significant bit (LSB) of
 		// each number.
-		int index1 = binary1_len - 1;
-		int index2 = binary2_len - 1;
+		int index1 = length1 - 1;
+		int index2 = length2 - 1;
 
 		// Efficiently constructs the resulting binary sum.
 		StringBuilder resultBuilder = new StringBuilder();
@@ -87,6 +87,7 @@ public class Binary {
 				index2--; // Move to the next digit to the left.
 			}
 
+			// We're taking advantage of the fact that we're using the integer datatype.
 			carry = digitSum / 2; // Calculate the new carry-over (either 0 or 1).
 			int resultDigit = digitSum % 2; // Determine the resulting digit (0 or 1).
 
@@ -109,26 +110,29 @@ public class Binary {
 	 */
 	public static Binary or(Binary binary1, Binary binary2) {
 		// The length of each binary number.
-		int binary1_len = binary1.number.length();
-		int binary2_len = binary2.number.length();
+		int length1 = binary1.number.length();
+		int length2 = binary2.number.length();
 
 		// Indices to track the current digit in each binary number, starting from the
 		// rightmost digit.
 		// The index should start from the index of the least significant bit (LSB) of
 		// each number.
-		int index1 = binary1_len - 1;
-		int index2 = binary2_len - 1;
+		// E.g.     0000 1110
+		//          ^       ^ 
+		// index:   0       7 (Least Significant Bit)
+		int index1 = length1 - 1;
+		int index2 = length2 - 1;
 
-		int maxLength = Math.max(binary1_len, binary2_len);
+		int maxLength = Math.max(length1, length2);
 		StringBuilder resultBuilder = new StringBuilder();
 
 		// Process each bit, computing the OR operation.
 		for (int i = 0; i < maxLength; i++) {
-			char bit_binary1 = i < binary1_len ? binary1.number.charAt(index1 - i) : '0';
-			char bit_binary2 = i < binary2_len ? binary2.number.charAt(index2 - i) : '0';
+			char binaryBit1 = i < length1 ? binary1.number.charAt(index1 - i) : '0';
+			char binaryBit2 = i < length2 ? binary2.number.charAt(index2 - i) : '0';
 
 			// If either bit is 1, the result is 1.
-			char orResult = (bit_binary1 == '1' || bit_binary2 == '1') ? '1' : '0';
+			char orResult = (binaryBit1 == '1' || binaryBit2 == '1') ? '1' : '0';
 			resultBuilder.insert(INSERT_BEFORE, orResult);
 		}
 
@@ -146,26 +150,27 @@ public class Binary {
 	 */
 	public static Binary and(Binary binary1, Binary binary2) {
 		// The length of each binary number.
-		int binary1_len = binary1.number.length();
-		int binary2_len = binary2.number.length();
+		int length1 = binary1.number.length();
+		int length2 = binary2.number.length();
 
-		// Indices to track the current digit in each binary number, starting from the
-		// rightmost digit.
-		// The index should start from the index of the least significant bit (LSB) of
-		// each number.
-		int index1 = binary1_len - 1;
-		int index2 = binary2_len - 1;
+		// Indices of the rightmost digit in each binary number
+		// The index of the least significant bit (LSB) of each number.
+		// E.g.     0000 1110
+		//          ^       ^ 
+		// index:   0       7 (Least Significant Bit)
+		int lsbIndex1 = length1 - 1;
+		int lsbIndex2 = length2 - 1;
 
-		int maxLength = Math.max(binary1_len, binary2_len);
+		int maxLength = Math.max(length1, length2);
 		StringBuilder resultBuilder = new StringBuilder();
 
 		// Process each bit, computing the OR operation.
 		for (int i = 0; i < maxLength; i++) {
-			char bit_binary1 = i < binary1_len ? binary1.number.charAt(index1 - i) : '0';
-			char bit_binary2 = i < binary2_len ? binary2.number.charAt(index2 - i) : '0';
+			char binaryBit1 = i < length1 ? binary1.number.charAt(lsbIndex1 - i) : '0';
+			char binaryBit2 = i < length2 ? binary2.number.charAt(lsbIndex2 - i) : '0';
 
 			// If both bits are 1, the result is 1.
-			char andResult = (bit_binary1 == '1' && bit_binary2 == '1') ? '1' : '0';
+			char andResult = (binaryBit1 == '1' && binaryBit2 == '1') ? '1' : '0';
 			resultBuilder.insert(INSERT_BEFORE, andResult);
 		}
 
@@ -187,15 +192,15 @@ public class Binary {
 		String zeroPadding = "";
 
 		// The length of each binary number.
-		int binary2_len = binary2.number.length();
+		int length2 = binary2.number.length();
 
-		// Indices to track the current digit in each binary number, starting from the
+		// Index to track the current digit in each binary number, starting from the
 		// rightmost digit.
 		// The index of the least significant bit (LSB) of each number.
-		int binary2_lsb_index = binary2_len - 1;
+		int lsbIndex2 = length2 - 1;
 
 		// Loop over each bit of binary2 and perform multiplication.
-		for (int i = binary2_lsb_index; i >= 0; i--) {
+		for (int i = lsbIndex2; i >= 0; i--) {
 			if (binary2.number.charAt(i) == '1') {
 				result = Binary.add(result, new Binary(binary1.number + zeroPadding));
 			}
